@@ -1,0 +1,112 @@
+{
+  "trigger_url": "https://api.runscope.com/radar/d9c6bd04-773a-4607-a121-014ba0bdfb2a/trigger", 
+  "name": "REST Session", 
+  "version": "1.0", 
+  "exported_at": 1452083857, 
+  "steps": [
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/session/create", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "neue Session erstellen", 
+      "headers": {}, 
+      "assertions": [], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/session/{{session_id}}", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "Session Infos", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal_number", 
+          "property": "code", 
+          "value": "0", 
+          "source": "response_json"
+        }, 
+        {
+          "comparison": "equal", 
+          "property": "message", 
+          "value": "{{session_id}}", 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/session/123/delete", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "Session l\u00f6schen mit ung\u00fcltiger session id", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "not_equal", 
+          "property": "code", 
+          "value": "202", 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/session/{{session_id}}/sessionInfo", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "Session l\u00f6schen mit ung\u00fcltiger session id", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "not_equal", 
+          "value": "Ung\u00fcltige Session", 
+          "source": "response_text"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/session/{{session_id}}/delete", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "Session l\u00f6schen ", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal_number", 
+          "property": "code", 
+          "value": "202", 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }
+  ], 
+  "description": ""
+}
