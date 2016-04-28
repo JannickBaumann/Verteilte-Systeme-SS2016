@@ -1,0 +1,305 @@
+{
+  "trigger_url": "https://api.runscope.com/radar/a68138cc-0b55-4b87-9b4d-33a8ea31f068/trigger", 
+  "name": "REST UserDeviceMapper", 
+  "version": "1.0", 
+  "exported_at": 1452083876, 
+  "steps": [
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/deleteuser?uid=1", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "User des alten Tests l\u00f6schen", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "not_empty", 
+          "property": "code", 
+          "value": null, 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/adduser?uid=1", 
+      "variables": [], 
+      "args": {}, 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "erstellen eines neuen Nutzers", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal_number", 
+          "property": "code", 
+          "value": "201", 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "data": "", 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/deleteuser?uid=2", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "l\u00f6schen eines Nutzers mit ung\u00fcltiger uid", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal_number", 
+          "property": "code", 
+          "value": "400", 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/deleteuser?uid=1", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "l\u00f6schen eines Nutzers", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal_number", 
+          "property": "code", 
+          "value": 200, 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/adduser?uid=1", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "erstellen eines neuen Nutzers", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal_number", 
+          "property": "code", 
+          "value": "201", 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/adddevices?uid=2&did=1", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "hinzuf\u00fcgen eines devices mit ung\u00fclter uid", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "not_equal", 
+          "property": "code", 
+          "value": 200, 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/adddevices?uid=1&did=1", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "hinzuf\u00fcgen eines devices", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal_number", 
+          "property": "code", 
+          "value": 200, 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}//removedevices?uid=2&did=1", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "l\u00f6schen eines Devices mit ung\u00fcltiger uid", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "not_equal", 
+          "property": "code", 
+          "value": 200, 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}//removedevices?uid=1&did=2", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "l\u00f6schen eines Devices mit ung\u00fcltiger did", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal_number", 
+          "property": "code", 
+          "value": 200, 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}//removedevices?uid=1&did=1", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "l\u00f6schen eines Devices", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal_number", 
+          "property": "code", 
+          "value": 200, 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/adddevices?uid=1&did=1,2,3,4,5", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "vorbereitung des n\u00e4chsten Tests", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal_number", 
+          "property": "code", 
+          "value": 200, 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/removedevices?uid=1&did=1,2,4", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "l\u00f6schen eines Devices", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal_number", 
+          "property": "code", 
+          "value": 200, 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/getdevices?uid=1", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "devices eines Nutzers anzeigen", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "equal", 
+          "property": "devices", 
+          "value": "[3, 5]", 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }, 
+    {
+      "body": "", 
+      "form": {}, 
+      "url": "http://{{ip}}:{{port}}/getdevices?uid=2", 
+      "variables": [], 
+      "step_type": "request", 
+      "auth": {}, 
+      "fragment": "", 
+      "note": "devices eines Nutzers anzeigen mit ung\u00fcltiger uid", 
+      "headers": {}, 
+      "assertions": [
+        {
+          "comparison": "not_equal", 
+          "property": "code", 
+          "value": "200", 
+          "source": "response_json"
+        }
+      ], 
+      "scripts": [], 
+      "method": "GET"
+    }
+  ], 
+  "description": null
+}
