@@ -10,8 +10,16 @@ import protobuf.presenceProtocol.SlaveAuthentication.Status;
 public class main {
 
 	public static void main(String[] args) {
-		
-		
+		/*CREATING A BINARY FILE
+		try {
+			// write
+			FileOutputStream output = new FileOutputStream("message.ser");
+			message.writeTo(output);
+			output.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}*/
 	}
 
 }

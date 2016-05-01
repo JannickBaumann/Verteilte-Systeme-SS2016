@@ -23,20 +23,12 @@ public class functions {
 		}
 	}
 
-	public static void sendAuthentication(Status status) {
+	public static SlaveAuthentication sendAuthentication(Status status) {
 
 		SlaveAuthentication message = presenceProtocol.SlaveAuthentication.newBuilder().setStatus(status).build();
+		return message;
 
-		try {
-			// write
-			FileOutputStream output = new FileOutputStream("message.ser");
-			message.writeTo(output);
-			output.close();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
+		// create binary
 		// send File on Socket
 	}
 
@@ -47,18 +39,10 @@ public class functions {
 		//handle Authentication
 	}
 
-	public static void sendAck(boolean ack) {
+	public static MasterAuthentication sendAck(boolean ack) {
 
 		MasterAuthentication message = presenceProtocol.MasterAuthentication.newBuilder().setAck(ack).build();
-		try {
-			// write
-			FileOutputStream output = new FileOutputStream("message.ser");
-			message.writeTo(output);
-			output.close();
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		return message;
 
 		// send File on Socket
 
@@ -67,6 +51,6 @@ public class functions {
 	public static void receiveAck() {
 
 		SlaveAuthentication ackMessage = receiveMessage();
-		// Handle Ack Data.
+		// Handle Ack Data.TBD
 	}
 }
