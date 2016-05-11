@@ -20,6 +20,15 @@ public class Client {
 		updateTimeString();
 		
 	}
+	public Client(Client a) {
+		
+		this.ID = a.getID();
+		this.address = a.getAddress();
+		this.state = a.getState();
+		this.timestamp = System.currentTimeMillis();
+		updateTimeString();
+		
+	}
 
 	public int getID() {
 		
