@@ -204,6 +204,8 @@ public final class presenceProtocol {
 
       // @@protoc_insertion_point(enum_scope:authenticator.SlaveAuthentication.Status)
     }
+    
+    //ende enum status
 
     private int bitField0_;
     public static final int STATUS_FIELD_NUMBER = 1;
