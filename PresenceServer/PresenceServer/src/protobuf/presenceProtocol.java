@@ -19,7 +19,7 @@ public final class presenceProtocol {
     /**
      * <code>optional .authenticator.SlaveAuthentication.Status status = 1;</code>
      */
-    protobuf.presenceProtocol.SlaveAuthentication.Status getStatus();
+    protobuf.presenceProtocol.protobuf.Status getStatus();
   }
   /**
    * Protobuf type {@code authenticator.SlaveAuthentication}
@@ -204,12 +204,10 @@ public final class presenceProtocol {
 
       // @@protoc_insertion_point(enum_scope:authenticator.SlaveAuthentication.Status)
     }
-    
-    //ende enum status
 
     private int bitField0_;
     public static final int STATUS_FIELD_NUMBER = 1;
-    private protobuf.presenceProtocol.SlaveAuthentication.Status status_;
+    private protobuf.presenceProtocol.protobuf.Status status_;
     /**
      * <code>optional .authenticator.SlaveAuthentication.Status status = 1;</code>
      */
@@ -219,7 +217,7 @@ public final class presenceProtocol {
     /**
      * <code>optional .authenticator.SlaveAuthentication.Status status = 1;</code>
      */
-    public protobuf.presenceProtocol.SlaveAuthentication.Status getStatus() {
+    public protobuf.presenceProtocol.protobuf.Status getStatus() {
       return status_;
     }
 
@@ -267,53 +265,53 @@ public final class presenceProtocol {
       return super.writeReplace();
     }
 
-    public static protobuf.presenceProtocol.SlaveAuthentication parseFrom(
+    public static protobuf.protobuf.SlaveAuthentication parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protobuf.presenceProtocol.SlaveAuthentication parseFrom(
+    public static protobuf.protobuf.SlaveAuthentication parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protobuf.presenceProtocol.SlaveAuthentication parseFrom(byte[] data)
+    public static protobuf.protobuf.SlaveAuthentication parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protobuf.presenceProtocol.SlaveAuthentication parseFrom(
+    public static protobuf.protobuf.SlaveAuthentication parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protobuf.presenceProtocol.SlaveAuthentication parseFrom(java.io.InputStream input)
+    public static protobuf.protobuf.SlaveAuthentication parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static protobuf.presenceProtocol.SlaveAuthentication parseFrom(
+    public static protobuf.protobuf.SlaveAuthentication parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static protobuf.presenceProtocol.SlaveAuthentication parseDelimitedFrom(java.io.InputStream input)
+    public static protobuf.protobuf.SlaveAuthentication parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static protobuf.presenceProtocol.SlaveAuthentication parseDelimitedFrom(
+    public static protobuf.protobuf.SlaveAuthentication parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static protobuf.presenceProtocol.SlaveAuthentication parseFrom(
+    public static protobuf.protobuf.SlaveAuthentication parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static protobuf.presenceProtocol.SlaveAuthentication parseFrom(
+    public static protobuf.protobuf.SlaveAuthentication parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -386,11 +384,11 @@ public final class presenceProtocol {
         return protobuf.presenceProtocol.internal_static_authenticator_SlaveAuthentication_descriptor;
       }
 
-      public protobuf.presenceProtocol.SlaveAuthentication getDefaultInstanceForType() {
+      public protobuf.protobuf.SlaveAuthentication getDefaultInstanceForType() {
         return protobuf.presenceProtocol.SlaveAuthentication.getDefaultInstance();
       }
 
-      public protobuf.presenceProtocol.SlaveAuthentication build() {
+      public protobuf.protobuf.SlaveAuthentication build() {
         protobuf.presenceProtocol.SlaveAuthentication result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -398,7 +396,7 @@ public final class presenceProtocol {
         return result;
       }
 
-      public protobuf.presenceProtocol.SlaveAuthentication buildPartial() {
+      public protobuf.protobuf.SlaveAuthentication buildPartial() {
         protobuf.presenceProtocol.SlaveAuthentication result = new protobuf.presenceProtocol.SlaveAuthentication(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
@@ -452,7 +450,7 @@ public final class presenceProtocol {
       }
       private int bitField0_;
 
-      private protobuf.presenceProtocol.SlaveAuthentication.Status status_ = protobuf.presenceProtocol.SlaveAuthentication.Status.OFF;
+      private protobuf.presenceProtocol.protobuf.Status status_ = protobuf.presenceProtocol.SlaveAuthentication.Status.OFF;
       /**
        * <code>optional .authenticator.SlaveAuthentication.Status status = 1;</code>
        */
@@ -462,7 +460,7 @@ public final class presenceProtocol {
       /**
        * <code>optional .authenticator.SlaveAuthentication.Status status = 1;</code>
        */
-      public protobuf.presenceProtocol.SlaveAuthentication.Status getStatus() {
+      public protobuf.presenceProtocol.protobuf.Status getStatus() {
         return status_;
       }
       /**
@@ -671,53 +669,53 @@ public final class presenceProtocol {
       return super.writeReplace();
     }
 
-    public static protobuf.presenceProtocol.MasterAuthentication parseFrom(
+    public static protobuf.protobuf.MasterAuthentication parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protobuf.presenceProtocol.MasterAuthentication parseFrom(
+    public static protobuf.protobuf.MasterAuthentication parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protobuf.presenceProtocol.MasterAuthentication parseFrom(byte[] data)
+    public static protobuf.protobuf.MasterAuthentication parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static protobuf.presenceProtocol.MasterAuthentication parseFrom(
+    public static protobuf.protobuf.MasterAuthentication parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static protobuf.presenceProtocol.MasterAuthentication parseFrom(java.io.InputStream input)
+    public static protobuf.protobuf.MasterAuthentication parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static protobuf.presenceProtocol.MasterAuthentication parseFrom(
+    public static protobuf.protobuf.MasterAuthentication parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static protobuf.presenceProtocol.MasterAuthentication parseDelimitedFrom(java.io.InputStream input)
+    public static protobuf.protobuf.MasterAuthentication parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static protobuf.presenceProtocol.MasterAuthentication parseDelimitedFrom(
+    public static protobuf.protobuf.MasterAuthentication parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static protobuf.presenceProtocol.MasterAuthentication parseFrom(
+    public static protobuf.protobuf.MasterAuthentication parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static protobuf.presenceProtocol.MasterAuthentication parseFrom(
+    public static protobuf.protobuf.MasterAuthentication parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -790,11 +788,11 @@ public final class presenceProtocol {
         return protobuf.presenceProtocol.internal_static_authenticator_MasterAuthentication_descriptor;
       }
 
-      public protobuf.presenceProtocol.MasterAuthentication getDefaultInstanceForType() {
+      public protobuf.protobuf.MasterAuthentication getDefaultInstanceForType() {
         return protobuf.presenceProtocol.MasterAuthentication.getDefaultInstance();
       }
 
-      public protobuf.presenceProtocol.MasterAuthentication build() {
+      public protobuf.protobuf.MasterAuthentication build() {
         protobuf.presenceProtocol.MasterAuthentication result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
@@ -802,7 +800,7 @@ public final class presenceProtocol {
         return result;
       }
 
-      public protobuf.presenceProtocol.MasterAuthentication buildPartial() {
+      public protobuf.protobuf.MasterAuthentication buildPartial() {
         protobuf.presenceProtocol.MasterAuthentication result = new protobuf.presenceProtocol.MasterAuthentication(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
