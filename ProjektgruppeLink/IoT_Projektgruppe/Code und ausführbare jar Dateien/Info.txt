@@ -1,0 +1,25 @@
+Dateien:
+
+session.jar			=>	Signaling-Server
+Server.jar			=> 	UDP-Forwarder
+Client.jar			=> 	GUI Client
+TargetDevice.jar	=>	Endgerät
+
+-----------------------------------------------------------------------------------------------------
+Anmerkungen:
+
+- Die DeviceID FF99 ist im TargetDevice fest einprogrammiert. Diese muss beim Start des Clients
+  mit angegeben werden.
+
+- Eingaben zur Steuerung des Clients:
+	request		- Sendet einen Request an den Signaling Server um eine SessionID zu erhalten
+	longpoll 	- Verschickt einen Longpoll an den Forwarder. Dieser enthält die eben zugeteilte SessionID
+	senden		- Sendet ein Paket an das Endgerät.
+	empfangen	- Wartet auf ein Paket vom Endgerät. Timeout nach 15 Sekunden
+	showid		- Zeigt die aktuelle SessionID
+	delete		- Löscht die Session
+
+- Eingaben zur Steuerung des Endgeräts:
+	senden		- Sendet ein Paket an das Endgerät.
+	empfangen	- Wartet auf ein Paket vom Endgerät. Timeout nach 15 Sekunden
+	showid		- Zeigt die aktuelle SessionID
