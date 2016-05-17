@@ -6,7 +6,5 @@
 			<accessrule kind="accessible" pattern="com/sun/**"/>
 		</accessrules>
 	</classpathentry>
-	<classpathentry kind="lib" path="protobuf-java-2.6.1.jar"/>
-	<classpathentry kind="lib" path="message.ser"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
