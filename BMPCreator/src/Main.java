@@ -21,11 +21,13 @@ public class Main {
 								"Homofürst");
 		bmp.setFont(Font.MONOSPACED,Font.ITALIC,20);
 		bmp.printMessage("Guten Tag, Erdenmenschen",120,120,Color.green);
-		bmp.drawCircle(20,120,20);
+		bmp.drawCircle(20,0,0);
 		bmp.fillCircle(15, 120, 20);
 		bmp.drawCircle(20,180,20);
 		bmp.fillCircle(15, 180, 20);
 		bmp.drawRectangle(100, 100, 100, 100);
+		bmp.drawEmoji(Emoji.happyFace, 100, 120, 120);
+		bmp.drawLine(10, 10, 24, 20);
 		bmp.write();
 		
 		
