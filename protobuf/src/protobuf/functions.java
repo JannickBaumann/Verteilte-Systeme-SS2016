@@ -25,11 +25,11 @@ public class functions {
 		}
 	}
 
-	public static SlaveAuthentication sendAuthentication(Status status, int id, String str, long time) {
+	public static SlaveAuthentication sendAuthentication(Status status, int id, String type, long time, String deviceInfo) {
 		
 
 		SlaveAuthentication message = presenceProtocol.SlaveAuthentication.newBuilder().setStatus(status)
-		.setId(id).setType(str).setSystemTime(time)				
+		.setId(id).setType(type).setSystemTime(time).setDeviceInfo(deviceInfo)				
 		.build();
 		return message;
 
