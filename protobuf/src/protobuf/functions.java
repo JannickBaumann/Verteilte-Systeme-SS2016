@@ -11,7 +11,6 @@ import protobuf.presenceProtocol.SlaveAuthentication.Status;
 
 public class functions {
 	
-	//infos zum slave on/off = bist du an oder aus
 	public static SlaveAuthentication receiveMessage() {
 
 		// recieve File from Socket
@@ -26,10 +25,12 @@ public class functions {
 		}
 	}
 
-	public static SlaveAuthentication sendAuthentication(Status status) {
+	public static SlaveAuthentication sendAuthentication(Status status, int id, String str, long time) {
 		
-		//ersttellt slaveauthetication mit status status
-		SlaveAuthentication message = presenceProtocol.SlaveAuthentication.newBuilder().setStatus(status).build();
+
+		SlaveAuthentication message = presenceProtocol.SlaveAuthentication.newBuilder().setStatus(status)
+		.setId(id).setType(str).setSystemTime(time)				
+		.build();
 		return message;
 
 		// create binary
