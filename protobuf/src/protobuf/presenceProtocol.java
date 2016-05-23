@@ -20,6 +20,52 @@ public final class presenceProtocol {
      * <code>optional .authenticator.SlaveAuthentication.Status status = 1;</code>
      */
     protobuf.presenceProtocol.SlaveAuthentication.Status getStatus();
+
+    /**
+     * <code>optional string type = 2;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>optional string type = 2;</code>
+     */
+    java.lang.String getType();
+    /**
+     * <code>optional string type = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <code>optional int32 id = 3;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>optional int32 id = 3;</code>
+     */
+    int getId();
+
+    /**
+     * <code>optional int64 systemTime = 4;</code>
+     */
+    boolean hasSystemTime();
+    /**
+     * <code>optional int64 systemTime = 4;</code>
+     */
+    long getSystemTime();
+
+    /**
+     * <code>optional string deviceInfo = 5;</code>
+     */
+    boolean hasDeviceInfo();
+    /**
+     * <code>optional string deviceInfo = 5;</code>
+     */
+    java.lang.String getDeviceInfo();
+    /**
+     * <code>optional string deviceInfo = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceInfoBytes();
   }
   /**
    * Protobuf type {@code authenticator.SlaveAuthentication}
@@ -82,6 +128,28 @@ public final class presenceProtocol {
                 bitField0_ |= 0x00000001;
                 status_ = value;
               }
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              type_ = bs;
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              id_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              systemTime_ = input.readInt64();
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              deviceInfo_ = bs;
               break;
             }
           }
@@ -204,8 +272,6 @@ public final class presenceProtocol {
 
       // @@protoc_insertion_point(enum_scope:authenticator.SlaveAuthentication.Status)
     }
-    
-    //ende enum status
 
     private int bitField0_;
     public static final int STATUS_FIELD_NUMBER = 1;
@@ -223,8 +289,126 @@ public final class presenceProtocol {
       return status_;
     }
 
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private java.lang.Object type_;
+    /**
+     * <code>optional string type = 2;</code>
+     */
+    public boolean hasType() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string type = 2;</code>
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          type_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string type = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_FIELD_NUMBER = 3;
+    private int id_;
+    /**
+     * <code>optional int32 id = 3;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 id = 3;</code>
+     */
+    public int getId() {
+      return id_;
+    }
+
+    public static final int SYSTEMTIME_FIELD_NUMBER = 4;
+    private long systemTime_;
+    /**
+     * <code>optional int64 systemTime = 4;</code>
+     */
+    public boolean hasSystemTime() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int64 systemTime = 4;</code>
+     */
+    public long getSystemTime() {
+      return systemTime_;
+    }
+
+    public static final int DEVICEINFO_FIELD_NUMBER = 5;
+    private java.lang.Object deviceInfo_;
+    /**
+     * <code>optional string deviceInfo = 5;</code>
+     */
+    public boolean hasDeviceInfo() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional string deviceInfo = 5;</code>
+     */
+    public java.lang.String getDeviceInfo() {
+      java.lang.Object ref = deviceInfo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          deviceInfo_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string deviceInfo = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceInfoBytes() {
+      java.lang.Object ref = deviceInfo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceInfo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private void initFields() {
       status_ = protobuf.presenceProtocol.SlaveAuthentication.Status.OFF;
+      type_ = "";
+      id_ = 0;
+      systemTime_ = 0L;
+      deviceInfo_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -242,6 +426,18 @@ public final class presenceProtocol {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeEnum(1, status_.getNumber());
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getTypeBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, id_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt64(4, systemTime_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getDeviceInfoBytes());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -254,6 +450,22 @@ public final class presenceProtocol {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, status_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getTypeBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, id_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, systemTime_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getDeviceInfoBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -374,6 +586,14 @@ public final class presenceProtocol {
         super.clear();
         status_ = protobuf.presenceProtocol.SlaveAuthentication.Status.OFF;
         bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        systemTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        deviceInfo_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -406,6 +626,22 @@ public final class presenceProtocol {
           to_bitField0_ |= 0x00000001;
         }
         result.status_ = status_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.type_ = type_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.systemTime_ = systemTime_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.deviceInfo_ = deviceInfo_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -424,6 +660,22 @@ public final class presenceProtocol {
         if (other == protobuf.presenceProtocol.SlaveAuthentication.getDefaultInstance()) return this;
         if (other.hasStatus()) {
           setStatus(other.getStatus());
+        }
+        if (other.hasType()) {
+          bitField0_ |= 0x00000002;
+          type_ = other.type_;
+          onChanged();
+        }
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasSystemTime()) {
+          setSystemTime(other.getSystemTime());
+        }
+        if (other.hasDeviceInfo()) {
+          bitField0_ |= 0x00000010;
+          deviceInfo_ = other.deviceInfo_;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -483,6 +735,222 @@ public final class presenceProtocol {
       public Builder clearStatus() {
         bitField0_ = (bitField0_ & ~0x00000001);
         status_ = protobuf.presenceProtocol.SlaveAuthentication.Status.OFF;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <code>optional string type = 2;</code>
+       */
+      public boolean hasType() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string type = 2;</code>
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            type_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string type = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string type = 2;</code>
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string type = 2;</code>
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string type = 2;</code>
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int id_ ;
+      /**
+       * <code>optional int32 id = 3;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 id = 3;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>optional int32 id = 3;</code>
+       */
+      public Builder setId(int value) {
+        bitField0_ |= 0x00000004;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 id = 3;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long systemTime_ ;
+      /**
+       * <code>optional int64 systemTime = 4;</code>
+       */
+      public boolean hasSystemTime() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int64 systemTime = 4;</code>
+       */
+      public long getSystemTime() {
+        return systemTime_;
+      }
+      /**
+       * <code>optional int64 systemTime = 4;</code>
+       */
+      public Builder setSystemTime(long value) {
+        bitField0_ |= 0x00000008;
+        systemTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 systemTime = 4;</code>
+       */
+      public Builder clearSystemTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        systemTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object deviceInfo_ = "";
+      /**
+       * <code>optional string deviceInfo = 5;</code>
+       */
+      public boolean hasDeviceInfo() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional string deviceInfo = 5;</code>
+       */
+      public java.lang.String getDeviceInfo() {
+        java.lang.Object ref = deviceInfo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            deviceInfo_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string deviceInfo = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceInfoBytes() {
+        java.lang.Object ref = deviceInfo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceInfo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string deviceInfo = 5;</code>
+       */
+      public Builder setDeviceInfo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        deviceInfo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string deviceInfo = 5;</code>
+       */
+      public Builder clearDeviceInfo() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        deviceInfo_ = getDefaultInstance().getDeviceInfo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string deviceInfo = 5;</code>
+       */
+      public Builder setDeviceInfoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        deviceInfo_ = value;
         onChanged();
         return this;
       }
@@ -922,12 +1390,13 @@ public final class presenceProtocol {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024Authentication.proto\022\rauthenticator\"k\n" +
-      "\023SlaveAuthentication\0229\n\006status\030\001 \001(\0162).a" +
-      "uthenticator.SlaveAuthentication.Status\"" +
-      "\031\n\006Status\022\007\n\003OFF\020\000\022\006\n\002ON\020\001\"#\n\024MasterAuth" +
-      "entication\022\013\n\003ack\030\001 \002(\010B\034\n\010protobufB\020pre" +
-      "senceProtocol"
+      "\n\024Authentication.proto\022\rauthenticator\"\255\001" +
+      "\n\023SlaveAuthentication\0229\n\006status\030\001 \001(\0162)." +
+      "authenticator.SlaveAuthentication.Status" +
+      "\022\014\n\004type\030\002 \001(\t\022\n\n\002id\030\003 \001(\005\022\022\n\nsystemTime" +
+      "\030\004 \001(\003\022\022\n\ndeviceInfo\030\005 \001(\t\"\031\n\006Status\022\007\n\003" +
+      "OFF\020\000\022\006\n\002ON\020\001\"#\n\024MasterAuthentication\022\013\n" +
+      "\003ack\030\001 \002(\010B\034\n\010protobufB\020presenceProtocol"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -946,7 +1415,7 @@ public final class presenceProtocol {
     internal_static_authenticator_SlaveAuthentication_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_authenticator_SlaveAuthentication_descriptor,
-        new java.lang.String[] { "Status", });
+        new java.lang.String[] { "Status", "Type", "Id", "SystemTime", "DeviceInfo", });
     internal_static_authenticator_MasterAuthentication_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_authenticator_MasterAuthentication_fieldAccessorTable = new

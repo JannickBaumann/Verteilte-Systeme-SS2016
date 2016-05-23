@@ -49,19 +49,18 @@ public class PresenceServer implements Runnable {
 				
 			}
 			
-			Client data = new Client( De_Encoder.decode(receivePacket.getData()));
+			String data = new String( receivePacket.getData());
 			Util.outputConsole("RECEIVED: " + data);
-			DatagramPacket ack = new DatagramPacket(De_Encoder.encode());
-			serverSocket.send(ack);
-			if(!listHandler.hasClient(data.getAddress())) {
+			
+			if(!listHandler.hasClient("127.0.0.2:55040")) {
 				
-				//Client c = new Client("127.0.0.2:55040", true);
-				listHandler.insertClient(data);
+				Client c = new Client("127.0.0.2:55040", true);
+				listHandler.insertClient(c);
 				
 			}
 			else {
 				
-				Client c = listHandler.getClient(data.getAddress());
+				Client c = listHandler.getClient("127.0.0.2:55040");
 				
 				if(c != null) {
 					
