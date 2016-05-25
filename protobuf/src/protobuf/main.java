@@ -7,12 +7,16 @@ import java.util.Arrays;
 
 import protobuf.presenceProtocol.*;
 import protobuf.TypeLengthValue;
+import protobuf.brokerageProtocol.consumer;
+import protobuf.brokerageProtocol.creator;
 import protobuf.presenceProtocol.SlaveAuthentication.Status;
 
 public class main {
 	private static final int STATUSINFO = 0;
 	private static final int ACKINFO = 1;
 	private static final int STRING = 555;
+	private static final int CONSUMER = 2;
+	private static final int CREATOR = 3;
 	public static void main(String[] args) {
 		//CREATING A BINARY FILE
 		//try {
@@ -29,6 +33,12 @@ public class main {
 			//System.out.println(message3);
 			String message4 = "hallo ich bin ein String";
 			
+			//neu: kwh preis typ anzTage
+			consumer message6 = functions.sendInformation(5, 10000, creator.Type.OEKO, 365);
+			consumer message7 = functions.sendInformation(1238, 900, creator.Type.ATOM, 23123132);
+			
+			creator message8 = functions.sendInformation(1238, creator.Type.KOHLE);
+			
 			byte[] dreiMessagesTLV = new byte[100]; 
 			//nachricht 1
 			int offset =0;
@@ -36,7 +46,7 @@ public class main {
 			byte[] test = functions.toTypeLengthValue(value, (byte)STATUSINFO);
 			//test in dreiMessagesTLV kopieren ab offset
 			System.arraycopy (test, 0, dreiMessagesTLV, offset, test.length);
-			//System.out.println("1: "+Arrays.toString(dreiMessagesTLV));
+			System.out.println("________________________________________");
 			
 			//nachricht 2
 			offset = test.length;
@@ -44,21 +54,44 @@ public class main {
 			test = functions.toTypeLengthValue(value, (byte)STATUSINFO);
 			//test in dreiMessagesTLV kopieren ab offset
 			System.arraycopy (test, 0, dreiMessagesTLV, offset, test.length);
-			//System.out.println("2: "+Arrays.toString(dreiMessagesTLV));
+			System.out.println("________________________________________");
 			
 			offset += test.length;
 			value = message3.toByteArray();
 			test = functions.toTypeLengthValue(value, (byte)ACKINFO);
 			//test in dreiMessagesTLV kopieren ab offset
 			System.arraycopy (test, 0, dreiMessagesTLV, offset, test.length);
-			//System.out.println("3: "+Arrays.toString(dreiMessagesTLV));
+			System.out.println("________________________________________");
 			
 			offset += test.length;
 			value = message4.getBytes();
 			test = functions.toTypeLengthValue(value, (byte)STRING);
 			//test in dreiMessagesTLV kopieren ab offset
 			System.arraycopy (test, 0, dreiMessagesTLV, offset, test.length);
-			//System.out.println("3: "+Arrays.toString(dreiMessagesTLV));
+			System.out.println("________________________________________");
+			
+			offset += test.length;
+			value = message6.toByteArray();
+			test = functions.toTypeLengthValue(value, (byte)CONSUMER);
+			//test in dreiMessagesTLV kopieren ab offset
+			System.arraycopy (test, 0, dreiMessagesTLV, offset, test.length);
+			System.out.println("________________________________________");
+			
+			offset += test.length;
+			value = message7.toByteArray();
+			test = functions.toTypeLengthValue(value, (byte)CONSUMER);
+			//test in dreiMessagesTLV kopieren ab offset
+			System.arraycopy (test, 0, dreiMessagesTLV, offset, test.length);
+			System.out.println("________________________________________");
+			
+			offset += test.length;
+			value = message8.toByteArray();
+			test = functions.toTypeLengthValue(value, (byte)CREATOR);
+			//test in dreiMessagesTLV kopieren ab offset
+			System.arraycopy (test, 0, dreiMessagesTLV, offset, test.length);
+			System.out.println("8: "+Arrays.toString(dreiMessagesTLV));
+			System.out.println("________________________________________");
+			
 			System.out.println("alle erstellt");
 			
 			//alle 3 nachrichten aus message lesen

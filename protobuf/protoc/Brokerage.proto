@@ -1,0 +1,23 @@
+package authenticator;
+
+option java_package = "protobuf"; // use Java package
+option java_outer_classname = "brokerageProtocol"; // use className
+
+
+message creator {
+  optional int32 kWh  = 1;
+  enum Type {
+    ATOM = 0;
+    KOHLE = 1;
+	OEL = 2;
+	GAS = 3;
+	OEKO = 4;
+  }
+  optional Type type = 2;
+}
+message consumer {
+  optional int32 kWh = 1;
+  optional int32 price = 2;
+  optional creator.Type type = 3;
+  optional int32 anzTage = 4; //für wie viele tage weil es einige verbraucher gibt, die für die nächsten 6 jahre strom kaufen
+}

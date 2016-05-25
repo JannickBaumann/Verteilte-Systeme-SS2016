@@ -9,6 +9,10 @@ message SlaveAuthentication {
     ON = 1;
   }
   optional Status status = 1;
+  optional string type = 2;
+  optional int32 id = 3;
+  optional int64 systemTime = 4;
+  optional string deviceInfo = 5;
 }
 
 message MasterAuthentication {

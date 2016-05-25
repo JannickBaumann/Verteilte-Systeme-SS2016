@@ -7,9 +7,37 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import protobuf.presenceProtocol.*;
+import protobuf.brokerageProtocol.*;
 import protobuf.presenceProtocol.SlaveAuthentication.Status;
 
 public class functions {
+	
+	//typen: atom, kohle, öl, gas, 
+	//nicht in der börse: wind, wasser, sonne
+	//strombörse in leibzig eex
+	//wenn verbraucher zu viel haben wird das dort 
+	
+	//für wie viele tage weil es einige verbraucher gibt, die für die nächsten 6 jahre strom kaufen
+public static consumer sendInformation(int kwh, int price, creator.Type type, int anzTage) {
+		consumer message = brokerageProtocol.consumer.newBuilder().setKWh(kwh)
+		.setPrice(price).setAnzTage(anzTage).setType(type)		
+		.build();
+		return message;
+
+		// create binary
+		// send File on Socket
+	}
+
+
+public static creator sendInformation(int kwh, creator.Type type) {
+	creator message = brokerageProtocol.creator.newBuilder().setKWh(kwh).setType(type)	
+	.build();
+	return message;
+
+	// create binary
+	// send File on Socket
+}
+	
 	
 	public static SlaveAuthentication receiveMessage() {
 
